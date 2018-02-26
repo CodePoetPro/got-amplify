@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78227175-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-78227175-4');
+    </script>
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '232718320513659');
+      fbq('track', 'RAVENPageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=232718320513659&ev=PageView&noscript=1"/></noscript>
+    <!-- End Facebook Pixel Code -->
+
+  </head>
+  <body>
+    <side>
+      <a href="index.html" class="logo animated slow infinte">
+
+      </a>
+      <ul class="side-bar-links">
+        <li>
+          <a href="houses.html">
+            <img src="assets/sidebar-icons/houses.svg"/> <span>Houses</span>
+          </a>
+        </li>
+          <li>
+            <a href="battles.html">
+              <img src="assets/sidebar-icons/battles.svg"/> <span>Battles We've Won</span>
+            </a>
+          </li>
+            <li>
+              <a href="lordsandladies.html">
+                <img src="assets/sidebar-icons/lords-and-ladies.svg"/> <span>Lords & Ladies</span>
+              </a>
+            </li>
+              <li>
+                <a class="active" href="send-a-raven.html">
+                  <img src="assets/sidebar-icons/send-a-raven.svg"/> <span>Send a Raven</span>
+                </a>
+              </li>
+              <li>
+                <a target="_blank" href="assets/AmplifyAgencyCredential.pdf">
+                  <span>DOWNLOAD AGENCY CREDENTIALS</span>
+                </a>
+              </li>
+      </ul>
+    </side>
+
+    <main class="send-a-raven-screen">
+      <div class="close-area">
+      </div>
+      <img class="menu hidden-lg" src="assets/sidebar-icons/hamburger.png">
+
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3 raven">
+          <h2 class="raven-title">SEND A RAVEN. BECOME AN ALLY.</h2>
+          <form>
+            <label class="raven-tag">
+              your HOUSE
+            </label>
+            <input class="raven-input" id="company_name" type="text"
+            placeholder="Enter company name">
+            <label class="raven-tag">
+              your ROLE
+            </label>
+            <input class="raven-input" id="company_role" type="text"
+            placeholder="Enter company role">
+            <label class="raven-tag">
+              your PLAN
+            </label>
+            <textarea class="raven-input" type="text" id="plan"
+            placeholder="Your marketing objectives"></textarea>
+            <label class="raven-tag">
+              your BUDGET
+            </label>
+            <div class="row bugdet-tags">
+              <div class="col-2 bugdet-tag">&lt;N500K</div>
+              <div class="col-2 bugdet-tag">&lt;N2.5M</div>
+              <div class="col-2 offset-1 bugdet-tag">&lt;N5M</div>
+              <div class="col-2 offset-1 bugdet-tag">&lt;N15M</div>
+              <div class="col-2 bugdet-tag">&lt;N30M</div>
+            </div>
+            <input type="range" min="1" max="5"
+             value="3" class="raven-range" id="budget">
+             
+             <button id= "SendaRaven" class="throw-bird">SEND</button>
+             <script type="text/javascript">
+                var button = document.getElementById('SendaRaven');
+                button.addEventListener(
+                    'click', 
+                    function() {
+                        fbq('track', 'SendaRaven');          
+                    },
+                    false
+                );
+             </script>
+            
+          </form>
+        </div>
+      </div>
+    </main>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/tether.js"></script>
+
+    <script src="js/svginject.js"></script>
+    <script src="js/bootstrap.min.js" type="aplication/js">
+    </script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

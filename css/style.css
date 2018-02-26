@@ -1,0 +1,928 @@
+@font-face {
+font-family: GOT;
+src: url(../fonts/Game_of_Thrones.ttf);
+}
+
+@font-face {
+font-family: TRJ;
+src: url(../fonts/Trajan_Pro_Regular.ttf);
+}
+
+@font-face {
+font-family: Caslon;
+src: url(../fonts/Adobe_Caslon_Pro_Regular.ttf);
+}
+
+
+
+body{
+  ursor: url('cursor.png') !important;
+}
+main{
+  padding-bottom: 20px;
+  width: 80vw;
+  height: 100vh;
+  box-sizing: border-box;
+  float: right;
+  background-color: #000;
+}
+main.landing-screen{
+  background-image: url('../assets/landing-screen/team_bg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #000;
+}
+.handle{
+  position: absolute;
+  left: 0px;
+  top: 50vh;
+  text-align: center;
+  color: #fff;
+  font-size: 10px;
+  font-family: TRJ;
+  transform: rotate(90deg);
+}
+
+.handle > img{
+  height: 20px;
+  text-shadow:0 0 100px #000;
+  transform: rotate(180deg);
+}
+.hero{
+  text-align: center;
+  color: #fff;
+  padding-top: 30vh;
+  box-sizing: border-box;
+}
+.hero::before{
+  content:' ';
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../assets/landing-screen/floral-1.svg');
+}
+.hero::after{
+  content:' ';
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../assets/landing-screen/floral-2.svg');
+}
+
+.hero-heading{
+	color: #FAFAFA;
+	font-family: GOT;
+	font-size: 48px;
+	letter-spacing: 7px;
+	line-height: 98px;
+  text-transform: uppercase;
+}
+
+.hero-text{
+	color: #FFFFFF;
+	font-family: TRJ;
+	font-size: 20px;
+	letter-spacing: 11px;
+	line-height: 24px;
+}
+
+.tiles{
+  margin-top: 100px;
+}
+
+.tile{
+  transition: .5s;
+  display: block;
+	height: auto;
+  min-height: 160px;
+  max-height: 250px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.tile:hover{
+  opacity: 0.8;
+  transform: scale(0.9)
+}
+
+.tile.houses{
+	background: url('../assets/landing-screen/house-dragon.png') left / 260px no-repeat,linear-gradient(225.48deg, #82C3E3 0%, #006097 100%);
+	box-shadow: 0 30px 40px 0 rgba(0,0,0,0.5);
+}
+
+.tile.battles {
+	background: url('../assets/landing-screen/battles-dragon.png') left / 260px no-repeat,linear-gradient(229.24deg, #82E0E3 0%, #009097 100%);
+	box-shadow: 0 30px 40px 0 rgba(0,0,0,0.5);
+}
+
+.tile.lordsandladies {
+	background: url('../assets/landing-screen/lords-and-ladies-dragon.png') left / 260px no-repeat,linear-gradient(225.09deg, #E3D1FF 0%, #6402B7 100%);
+	box-shadow: 0 30px 40px 0 rgba(0,0,0,0.5);
+}
+
+
+.tile-text{
+  position: relative;
+  text-align: center;
+  font-family: TRJ;
+  text-transform: capitalize;
+  color: #000000;
+  font-size: 16px;
+	letter-spacing: 2px;
+	line-height: 19px;
+}
+
+.tile-image{
+  text-align: center;
+  padding-top: 30px;
+}
+.tile-text > span{
+    padding: 10px;
+    padding-top: 60px;
+    display: block;
+}
+
+.tile-text > span::before{
+  width: inherit;
+  content: " ";
+  display: block;
+  height: 15px;
+  background-image: url('../assets/landing-screen/floral.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+side{
+  position: fixed;
+	background: linear-gradient(180deg, #22589D 0%, #030821 100%);
+  z-index: 9999;
+  height: 100vh;
+  width: 20vw;
+  box-sizing: border-box;
+}
+
+.logo{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px;
+    padding-top: 100px;
+    padding-left: 40px;
+    font-weight: bold;
+    font-size: 18px;
+    padding-bottom: 50px;
+    text-decoration: none;
+    color: #fff;
+    font-family: GOT;
+    text-transform: capitalize;
+    display: block;
+    letter-spacing: 2px;
+    background-image: url("../assets/sidebar-icons/winter-is-here.png");
+}
+
+.logo:hover{
+  color: #fff;
+  text-decoration: none;
+  animation-name: flash;
+}
+
+.menu{
+  display: none;
+}
+
+.side-bar-links{
+  padding-left: 40px;
+  padding-right: 0;
+}
+
+.side-bar-links>li{
+  list-style-type: none;
+  border-bottom: solid 1px rgba(225, 220, 255, 0.3);
+}
+
+.side-bar-links>li>a{
+  display: block;
+  transition: padding 0.5s;
+  padding:20px 10px;
+	color: #ECECEC;
+	font-family: TRJ;
+	font-size: 14px;
+	line-height: 18px;
+}
+.side-bar-links>li>a:hover, .side-bar-links>li>a.active{
+  border-left: solid 2px #82DCFF;
+  background-image: url('../assets/sidebar-icons/active_bg.jpg');
+  background-size: cover;
+  padding:20px 20px;
+}
+
+.side-bar-links a, .side-bar-links a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+
+.side-bar-links>li:last-child, .side-bar-links>li:last-child > a{
+  border-bottom: none;
+  font-size: 10px;
+}
+
+.side-bar-links img{
+  padding-right: 10px;
+}
+.houses-screen{
+  background-color: #000;
+  margin: 0;
+}
+.house{
+  display: inline-block;
+  height: 100vh;
+  /*padding: 20px;*/
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 50px;
+  box-sizing: border-box;
+  color: #fff;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+
+.house > * {
+  transition: all 0.5s ease-in-out;
+}
+
+.house > .house-image{
+ margin-top: 100px;
+ margin-bottom: 70px;
+ height: 220px;
+}
+
+.house:hover .house-image{
+  height: 100px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.house > .house-head-text {
+	color: #FFF8F0;
+	font-family: GOT;
+	font-size: 16px;
+	letter-spacing: 2px;
+	line-height: 19px;
+	text-align: center;
+  text-transform: uppercase;
+}
+
+.house > .house-head-text::after{
+  background: url('../assets/houses/flower.svg');
+  background-size: 110px;
+  background-repeat: no-repeat;
+  background-position: center;
+  content: " ";
+  display: block;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.house > .house-decr {
+	color: #FFF8F0;
+	font-family: Caslon;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+  font-weight: 100;
+  height: 130px;
+  overflow: hidden;
+}
+
+
+.house:hover .house-decr{
+  height: auto;
+}
+
+
+.house:hover .house-image{
+  height: 70px;
+}
+
+.house > .house-links{
+  margin-top: 20px;
+  color: #82DCFF;
+  font-family: Caslon;
+  text-transform: capitalize;
+  font-size: 14px;
+	line-height: 17px;
+  opacity: 0;
+}
+
+.house:hover .house-links{
+  opacity: 1;
+}
+
+.house.targ{
+  background-image: url('../assets/houses/house-1-bg.png');
+}
+.house.lann{
+  background-image: url('../assets/houses/house-2-bg.png');
+}
+.house.stark{
+  background-image: url('../assets/houses/house-3-bg.png');
+}
+
+main.battles-screen{
+  position: relative;
+  background: linear-gradient(270deg, #0D386E 0%, #030821 100%);
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+.battles-screen .row{
+  padding: 0 20px;
+  margin: 0;
+  box-sizing: border-box;
+}
+.battles-container{
+  padding: 20px;
+}
+.featured-battle {
+  padding: 0px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('../assets/battles-weve-won/project-1.png');
+}
+
+.battle{
+  padding-left: 50px;
+  height: 340px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.featured-battle.battle{
+  padding-left: 0px;
+}
+
+.lydia{
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('../assets/battles-weve-won/GOT-photo-lydia.png');
+}
+.chi{
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('../assets/battles-weve-won/GOT-photo-chi.png');
+}
+.battle-title{
+  padding-top: 150px;
+  text-transform: uppercase;
+	color: #FFF8F0;
+	font-family: GOT;
+	font-size: 20px;
+	letter-spacing: 3px;
+	line-height: 34px;
+	text-align: left;
+  margin-bottom: 20px;
+  max-width: 200px;
+}
+.featured-battle .battle-title{
+  padding-top: 70px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.featured-battle .battle-ally{
+  text-align: center;
+}
+
+.featured-battle .battle-ally::after{
+  background-position: center;
+}
+
+.battle-ally{
+	color: #82DCFF;
+	font-family: GOT;
+	font-size: 12px;
+	letter-spacing: 5px;
+	line-height: 14px;
+	text-align: left;
+}
+.battle-ally::after{
+  content: " ";
+  height: 20px;
+  display: block;
+  background-image: url('../assets/battles-weve-won/floral-line.png');
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 150px;
+  margin-top: 20px;
+}
+.battle-highlight{
+  text-align: left;
+  margin-top: 50px;
+}
+.b-h-title{
+	color: #FFFFFF;
+	font-family: TRJ;
+	font-size: 12px;
+	letter-spacing: 1px;
+	line-height: 14px;
+}
+.b-h-desc{
+	color: #FFF8F0;
+	font-family: TRJ;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	line-height: 18px;
+}
+.battle-model{
+  transition: opacity .5s ease-in-out, height .2s ease-in-out;
+  position: fixed;
+  top: 0;
+  left:0;
+  /*display: none;*/
+  opacity: 0;
+  z-index: 99999;
+  height: 0;
+  width: 100%;
+  /*background-color: rgba(0,0,0,0.0);*/
+  overflow-y: scroll;
+}
+.battle-model.show{
+  /*display: block;*/
+  opacity : 1;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+}
+.battle-details{
+  padding-top: 50px !important;
+}
+
+.battle-model .battle-brief{
+	color: #FFF8F0;
+	font-family: Caslon;
+	font-size: 16px;
+	line-height: 26px;
+}
+.battle-model .close{
+  position: fixed;
+  padding: 20px;
+  height: 60px;
+  z-index: 99999999;
+}
+
+.battle-brief::before{
+  content: " ";
+  display: block;
+  height: 15px;
+  background-image: url('../assets/send-a-raven/floral.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  background-position: right;
+  margin-bottom: 30px;
+}
+
+
+
+.battle-action > .title{
+	color: #FFF8F0;
+	font-family: TRJ;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	line-height: 19px;
+	text-align: left;
+  margin-bottom: 30px;
+}
+.battle-action > .descr{
+	color: #FFF8F0;
+	font-family: Caslon;
+	font-size: 16px;
+	line-height: 26px;
+}
+
+.lordsandladies-screen{
+  margin: 0;
+}
+.lords-and-ladies{
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  height: 50vh;
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.about-lords-and-ladies{
+  transform: translateY(20px);
+  transition: 0.5s;
+  opacity: 0;
+  padding: 20px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+	background: linear-gradient(0deg, #000000 0%, rgba(0,0,0,0.5) 100%);
+}
+
+.about-lords-and-ladies:hover{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.about-lords-and-ladies > .title{
+	color: #FFF8F0;
+	font-family: TRJ;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	line-height: 19px;
+	text-align: center;
+  text-transform: capitalize;
+  padding-top: 130px;
+}
+
+.about-lords-and-ladies > .title::after{
+  content: " ";
+  display: block;
+  height: 15px;
+  width: 100%;
+  background-image: url('../assets/send-a-raven/floral.svg');
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.about-lords-and-ladies > .descr{
+	color: #FFF8F0;
+	font-family:Caslon;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+}
+
+
+main.send-a-raven-screen{
+  background-image: url('../assets/send-a-raven/bg.png');
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.send-a-raven-screen .row{
+  margin: 0;
+}
+.raven{
+  padding-top: 60px;
+  text-align: center;
+}
+.raven-title{
+	color: #FFF8F0;
+	font-family: GOT;
+	font-size: 18px;
+	letter-spacing: 2px;
+	line-height: 21px;
+	text-align: center;
+}
+.raven-title::after{
+  content: " ";
+  display: block;
+  height: 30px;
+  background-image: url('../assets/send-a-raven/floral.svg');
+  background-position: center;
+  background-size: 120px;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+}
+
+.raven form{
+  margin-top: 60px;
+}
+
+.raven-tag{
+  display: block;
+	color: #FFFFFF;
+	font-family: GOT;
+	font-size: 12px;
+	line-height: 14px;
+	text-align: center;
+  margin-bottom: 15px;
+}
+.raven-tag::before{
+  margin-right: 15px;
+  content: " ";
+  width: 70px;
+  display: inline-block;
+  height: 12px;
+  background-image: url('../assets/send-a-raven/HEADING.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.raven-tag::after{
+  margin-left: 15px;
+  content: " ";
+  width: 70px;
+  display: inline-block;
+  height: 12px;
+  background-image: url('../assets/send-a-raven/HEADING.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.raven-input{
+  transition: .5s ease-in-out;
+  margin-bottom: 25px;
+  padding: 12px;
+	width: 100%;
+	background-color: rgba(255,255,255,0.5);
+	color: #fff;
+	font-family: Caslon;
+	font-size: 14px;
+	font-style: italic;
+  border: none;
+}
+
+.raven-input::placeholder{
+  color: #fff;
+}
+
+.raven-input:focus{
+  color: #222;
+  background-color: rgba(255,255,255,1);
+
+}
+
+.raven-range{
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    background: #fff; /* Grey background */
+    outline: none; /* Remove outline */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: all .2s;
+    box-sizing: border-box;
+    height: 1px;
+    cursor: pointer;
+}
+
+.raven-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 100%;
+    height: 20px;
+    width: 20px;
+    background-color: #82DCFF;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.raven-range::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 100%;
+    height: 20px;
+    width: 20px;
+    background-color: #82DCFF;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.raven-range:hover {
+    height: 2px;
+}
+.raven-range::-moz-range-thumb:hover{
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.raven-range::-webkit-slider-thumb:hover{
+    opacity: 1;
+    transform: scale(1.1);
+}
+.bugdet-tag{
+  	color: #FFFFFF;
+  	font-family: Caslon;
+  	font-size: 12px;
+  	line-height: 14px;
+  	text-align: center;
+}
+
+.bugdet-tags{
+    margin: 0;
+}
+
+.bugdet-tag:nth-of-type(1)
+,.bugdet-tag:nth-of-type(2){
+  text-align: left;
+}
+
+.bugdet-tag:nth-of-type(4)
+,.bugdet-tag:nth-of-type(5){
+  text-align: right;
+}
+
+.throw-bird{
+  margin-top: 30px;
+  border: none;
+  padding: 15px;
+	width: 100%;
+	background-color: #383C45;
+	background: linear-gradient(225.48deg, #82C3E3 0%, #006097 100%);
+	box-shadow: 0 30px 40px 0 rgba(0,0,0,0.5);
+	color: #FFFFFF;
+	font-family: TRJ;
+	font-size: 16px;
+	letter-spacing: 2px;
+	line-height: 19px;
+	text-align: center;
+}
+
+@media (max-width: 1024px) {
+
+  side{
+    position: fixed;
+    left: -400px;
+    width: 400px;
+    opacity: 0;
+    transition: 0.5s;
+    overflow-y: scroll;
+  }
+  .close-area{
+    display: none;
+    position: absolute;
+    background-color: #000;
+    opacity: 0.5;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+  }
+  .close-area.show{
+    display: block;
+  }
+  side.show{
+    left:0;
+    opacity: 1;
+  }
+  main{
+    width: 100vw;
+  }
+  .menu{
+    display: block;
+    position: fixed;
+    padding: 20px;
+    z-index: 100;
+  }
+
+  .house .house-decr{
+    height: auto;
+  }
+
+
+  .house .house-image{
+    height: 70px;
+  }
+
+  .house .house-links{
+    opacity: 1;
+  }
+
+  main{
+    min-width: 100vw;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  main.send-a-raven-screen{
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .about-lords-and-ladies{
+    padding: 10px;
+  }
+
+  .about-lords-and-ladies > .title{
+    padding-top: 10px;
+    font-size: 14px;
+  	line-height: 16px;
+  }
+
+  .about-lords-and-ladies > .descr{
+  	color: #FFF8F0;
+  	font-family:Caslon;
+  	font-size: 12px;
+  	line-height: 16px;
+  	text-align: center;
+  }
+
+  .battle-model .close{
+    position: fixed;
+    padding: 20px;
+    height: 60px;
+    right: 0;
+    z-index: 99999999;
+  }
+
+}
+
+@media (max-width: 768px) {
+  side{
+    position: fixed;
+    left: -100vw;
+    width: 100vw;
+    opacity: 0;
+    transition: 0.5s;
+    overflow-y: scroll;
+  }
+
+  .close-area{
+    display: none;
+    position: absolute;
+    background-color: #000;
+    opacity: 0.5;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+  }
+  .close-area.show{
+    display: block;
+  }
+  side.show{
+    left:0;
+    opacity: 1;
+  }
+  main{
+    min-width: 100vw;
+    min-height: 100vh;
+    height: auto;
+  }
+  .menu{
+    display: block;
+    position: fixed;
+    padding: 20px;
+    z-index: 99900;
+  }
+
+  .featured-battle{
+    height: auto;
+  }
+
+  .hero::before{
+    content:' ';
+    display: block;
+    box-sizing: border-box;
+    width: 50%;
+    height: 30px;
+    margin: 0 auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../assets/landing-screen/floral-1.svg');
+    background-size: contain;
+  }
+  .hero::after{
+    content:' ';
+    display: block;
+    box-sizing: border-box;
+    width: 50%;
+    height: 30px;
+    margin: 0 auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../assets/landing-screen/floral-2.svg');
+  }
+
+  .hero-heading{
+  	color: #FAFAFA;
+  	font-family: GOT;
+  	font-size: 40px;
+  	letter-spacing: 7px;
+  	line-height: 80px;
+    text-transform: uppercase;
+  }
+
+  .hero-text{
+  	color: #FFFFFF;
+  	font-family: TRJ;
+  	font-size: 16px;
+  	letter-spacing: 11px;
+  	line-height: 20px;
+  }
+
+  .house{
+    height: auto;
+    box-sizing: content-box;
+  }
+
+}
